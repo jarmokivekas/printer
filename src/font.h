@@ -15,10 +15,10 @@
 // symbol bitmap arrays for uppercase characters. Runlength encoded going
 // from top to bottom, left to right. 
 // These arrays will be CHAR_H * CHAR_W in size.
-const uc_a[] PROGMEM = {}
-const uc_b[] PROGMEM = {}
-const uc_c[] PROGMEM = {}
-const uc_d[] PROGMEM = {}
+const uc_a[] PROGMEM = {0x3f, 0x48, 0x48, 0x48, 0x3f};
+const uc_b[] PROGMEM = {0x7f, 0x49, 0x49, 0x49, 0x36};
+const uc_c[] PROGMEM = {0x32, 0x41, 0x41, 0x41, 0x22};
+const uc_d[] PROGMEM = {0x7f, 0x41, 0x41, 0x41, 0x3e};
 
 // Array of symbol bitmap arrays, bitmap data can be easily accessed
 // through uc_chars[UC_IDX(char)][pixel]
@@ -27,6 +27,6 @@ const uc_chars[] PROGMEM = {
 	uc_b,
 	uc_c,
 	uc_d,
-}
+};
 
 #endif FONT_H
