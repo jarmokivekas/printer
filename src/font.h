@@ -14,7 +14,8 @@
 
 // symbol bitmap arrays for uppercase characters. Runlength encoded going
 // from top to bottom, left to right. 
-// These arrays will be CHAR_H * CHAR_W in size.
+// Data is encoded using a bit depth of 1, every bit in the array maps
+// a pixel.
 const uc_a[] PROGMEM = {0x3f, 0x48, 0x48, 0x48, 0x3f};
 const uc_b[] PROGMEM = {0x7f, 0x49, 0x49, 0x49, 0x36};
 const uc_c[] PROGMEM = {0x32, 0x41, 0x41, 0x41, 0x22};
