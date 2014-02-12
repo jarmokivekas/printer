@@ -13,7 +13,7 @@ The plan is to store the bitmaps for all the symbols in a run-length encoded for
 
 For a reference on the printing method, look at [txtBOMBER](http://www.behance.net/gallery/txtBOMBER/406136) or [Time Writer](http://oliviervanherpt.nl/time-writer/), the idea for this project is based of those two.
 
-I created a draft for a font based off Monaco. Turns out uppercase letter fit quite nicely within the the 5x8 pixel constraint, even without modifications, but lowercase letters are more problematic. I tried squeezing the all the lowercase letters into the 5x8 format, but the result wasn't too great.
+I created a draft for a font based off Monaco. Turns out uppercase letters fit quite nicely within the the 5x8 pixel constraint, even without modifications. Lowercase letters are more problematic. I tried squeezing the all the lowercase letters into the 5x8 format, but the result wasn't too great on some of them.
 
 [Link to the font](./sampleFont0.png)
 
