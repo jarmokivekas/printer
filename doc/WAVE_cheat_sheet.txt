@@ -1,0 +1,42 @@
+The "WAVE" format starts with a RIFF header and consists of two subchuncks: "fmt" and "data". "fmt" is for describing the format of the audio, and "data" contais the actual data (duh).
+
+A sample is the state of all channels at a certain timepoint.
+
++-------------------------------------------------------------------------------
+| RIFF header
++--------+-------+---------------+----------------------------------------------
+| offset | size  | name          | contents
++--------+-------+---------------+----------------------------------------------
+| 0x00   | 4B    | ChunckID      | Contains the string "RIFF" (0x52494646)
+| 0x04   | 4B    | ChunckSize    | 4 + (8 +subChunck1Size) + (8+ subChunck2Size)
+|        |       |               | = 36 + subChunck2Size       
+| 0x08   | 4B    | Format        | Contains the string "WAVE" (0x57415645)
++--------+-------+---------------+----------------------------------------------
+
+
++-------------------------------------------------------------------------------
+| fmt
++--------+-------+---------------+----------------------------------------------
+| offset | size  | name          | contents
++--------+-------+---------------+----------------------------------------------
+| 0x0c   | 4B    | SubchunckID   | Contains "fmt" (0x666d7420)
+| 0x10   | 4B    | SubchunckSize | The size of the subchunck data that follows
+|        |       |               | this value. (16 for PCM)
+| 0x14   | 2B    | AudioFormat   | (PCM = 1)
+| 0x16   | 2B    | NumChannels   | Mono = 1, Stereo = 2
+| 0x18   | 4B    | SampleRate    | (8000, 44100, etc.)
+| 0x1c   | 4B    | ByteRate      | SampleRate * NumChannels * BitsPerSample/8 
+| 0x20   | 2B    | BlockAlign    | NumChannels * BitsPerSample/8
+| 0x22   | 2B    | BitsPerSample | 8 bits = 8, 16 bits = 16
++--------+-------+---------------+----------------------------------------------
+
+
++-------------------------------------------------------------------------------
+| data
++--------+-------+---------------+----------------------------------------------
+| offset | size  | name          | contents
++--------+-------+---------------+----------------------------------------------
+| 0x24   | 4B    | SubchunckID   | Contains "data" (0x64617461)
+| 0x28   | 4B    | SubchunckSize | NumSamples * NumChannels * BitsPerSample/8
+| 0x2c   | ?B    | AudioFormat   | the sound data
++--------+-------+---------------+----------------------------------------------
