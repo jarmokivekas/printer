@@ -19,11 +19,6 @@ I2C is a communicatoin protocol, not a filetype. But it can still be thought of 
 
 I need four stereo samples (8 bytes of 8-bit samples) to save and transfer a bit of data. This will make sure that the signals are well in sync and that all data is safetly transfered. I'll be using 8kHz 8-bit audio and it'll give me a transfer speed of 2000 bits per second which is good enough for the application. Since the signal has it's own clock the samplerate can be increased to get a faster transfer. A baud of 2000 bits/s should not be hard to recieve with any microcontroller.
 
-####12.02.2014
-This project is currently lacking a name. We thought about "Monaco9 is seven pixels tall", but it turns out we want to use a font thats eight pixels tall, so we could go with "We need a font" as the current project name.
-
--Juha
-
 
 ####12.02.2014 17:02
 
@@ -37,4 +32,13 @@ I created a draft for a font based off Monaco. Turns out uppercase letters fit q
 
 [Link to the font](./sampleFont0.png)
 
---jarmo
+-jarmo
+
+
+####13.02.2014 -- Bitmap parsing
+
+Assuming the device will be built around an arduino (likely, since there is one at our disposal) or at least one of ATmega-series microcontrollers, parsing the bitmaps for our font might end up being easier than i expected at first.
+
+In the current design there will be 8 I/O pins used for controlling printing, each controlling one of the 8 print heads. The way symbol bitmaps are stored in the program enables us to simply read a full byte of data form the bitmap and write the value directly to `PORTD`, an 8-bit register where each bit controls the state of one I/O pin.
+
+-jarmo
