@@ -10,7 +10,13 @@
 
 // Macro for acessing bitmaps[]
 #define BM_IDX(c) ((c-0x20) * CHAR_W)
-	
+
+// for sanitizing input before use
+bool symbolBitmapExists(char c){
+	if (c >= 0x20 && c <= 0x7f)
+		{return true;}
+	return false:
+}
 
 const char bitmaps[] PROGMEM = {
 	0x00, 0x00, 0x00, 0x00, 0x00,
