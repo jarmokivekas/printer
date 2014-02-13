@@ -19,7 +19,7 @@ uint32_t SubChunck2Size;
 uint32_t ChunckSize;
 
 
-uint8_t* write_audio(char* filename, uint8_t* header, uint8_t* audio_data){
+void write_audio(char* filename, uint8_t* header, uint8_t* audio_data){
     FILE* output = fopen(filename, "w");
 
     fwrite(header, 0x2c, 1, output);
@@ -52,8 +52,6 @@ int main(int argc, char* argv[]){
     //stero sound 
     uint8_t* audio = malloc(SubChunck2Size);
 
-
-    printf("%d\n", NumSamples);
     uint8_t WAVE_header[0x2c] = {
         0x52, 0x49, 0x46, 0x46,     //"RIFF"
         ((uint8_t*)&ChunckSize)[0], ((uint8_t*)&ChunckSize)[1], ((uint8_t*)&ChunckSize)[2], ((uint8_t*)&ChunckSize)[3],     //36 + SubChunck2size
@@ -94,6 +92,7 @@ int main(int argc, char* argv[]){
     }
 
     write_audio(argv[2], WAVE_header, audio);
+    return 0;
 }
 
 
