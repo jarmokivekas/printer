@@ -1,14 +1,21 @@
 #include <avr/io.h>
 
-#ifndef PRINT_H
-#define PRINT_H
+#ifndef PRINTCTL_H
+#define PRINTCTL_H
 
+// initialize printing hardware
 void printingHWinit(){
-	// set all PORTD pins as outputs
-	DDRD = 0xff;
+	DDRD = 0xff;		// set all PORTD pins as outputs
 }
 
-void printColumn(colData){
+// output appropriate signals for print head actuators
+void beginPrint(colData){
 	PORTD = colData;
 }
+
+// stop all print heads
+void endPrint(){
+	PORTD = 0x00;
+}
+
 #endif
