@@ -42,3 +42,17 @@ Assuming the device will be built around an arduino (likely, since there is one 
 In the current design there will be 8 I/O pins used for controlling printing, each controlling one of the 8 print heads. The way symbol bitmaps are stored in the program enables us to simply read a full byte of data form the bitmap and write the value directly to `PORTD`, an 8-bit register where each bit controls the state of one I/O pin.
 
 -jarmo
+
+####14.02.2014
+
+I've decided to use either an Atmel ATmega168 or an ATmega328 microcontroller as the platform for this project. Both microcontrollers have a built-in 2-wire serial interface (TWI) compatible with the I2C protocol. Among other things, the interface includes a Control Unit which can be configured to trigger an interrupt after a variety of events, such as the device being addressed on the I2C bus or after receiving a byte of data from the master.
+
+The interface has support for all four I2C operating modes, although for this particular project only the slave receive mode will be needed.
+
+The interface is described in section 22 "2-wire Serial Interface" of the [datasheet](http://www.atmel.com/images/atmel-8271-8-bit-avr-microcontroller-atmega48a-48pa-88a-88pa-168a-168pa-328-328p_datasheet.pdf)
+
+I'm currently in the process of browsing relevant header files while rereading about the interface in the datasheet, in order to get a better understanding of all the registers involved in using the interface.
+
+-jarmo
+
+
