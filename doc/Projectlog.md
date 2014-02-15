@@ -64,13 +64,16 @@ We've opted to include all ASCII characters within the range [0x20, 0x7e]. ACSII
 
 To get started with creating our font I ran a couple of lines of python that output all the characters we want to include in our font:
 
+	
 	import sys
 	for i in range(0x20, 0x7f):
 		sys.stdout.write(chr(i))
 
 output:
 
+	
 	!"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_`abcdefghijklmnopqrstuvwxyz{|}~
+
 
 I then set the font of my terminal to Monaco and font size to 7 pixels, took a screenshot and opened it in Gimp (image editor). 
 
@@ -81,6 +84,8 @@ Screenshot I started working from:
 Final result:
 
 ![final result](./fontCreationProcess1.png)
+
+Note: because I have no regard for standards I took the liberty of swapping the dollar sing for a euro sing, in the hopes that it will be more useful.
 
 One of the format options in Gimp to which images can be exported is "C source code header". While the code it generates was not directly compatible with the way our font is stored, adapting it was only a matter search and replace. 
 
@@ -109,3 +114,7 @@ Our program stores the same data like so:
 	};
 
 From what I've gathered the literal binary notation starting with 0b used above is not actually standard C. Avr-gcc however supports it, and using it in this case is very convenient.
+
+While it could be more automated, the process described above is simple enough that it can be easily repeated if the need for a new iteration of the font emerges or more symbols are to be added.
+
+-jarmo
