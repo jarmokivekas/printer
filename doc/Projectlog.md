@@ -56,3 +56,56 @@ I'm currently in the process of browsing relevant header files while rereading a
 -jarmo
 
 
+####15.02.2014 -- Generating font
+
+I spent some time today generating the `bitmaps[]` array for font.c that contains all the symbol bitmap data for our device. This is a summary of the process.
+
+We've opted to include all ASCII characters within the range [0x20, 0x7e]. ACSII characters below 0x20 are non-printable control characters. Characters above 0x7e include additional special symbols, some Greek letters and various reappearances of letters with different diacritics (glyphs you add to a letter to indicate they sound funny) etc. Characters in the [0x20, 0x7e] range are the most commonly used ones and will suffice for our purposes.
+
+To get started with creating our font I ran a couple of lines of python that output all the characters we want to include in our font:
+
+	import sys
+	for i in range(0x20, 0x7f):
+		sys.stdout.write(chr(i))
+
+output:
+
+	!"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_`abcdefghijklmnopqrstuvwxyz{|}~
+
+I then set the font of my terminal to Monaco and font size to 7 pixels, took a screenshot and opened it in Gimp (image editor). 
+
+Screenshot I started working from:
+
+![screenshot](./fontCreationProcess0.png)
+
+Final result:
+
+![final result](./fontCreationProcess1.png)
+
+One of the format options in Gimp to which images can be exported is "C source code header". While the code it generates was not directly compatible with the way our font is stored, adapting it was only a matter search and replace. 
+
+Below is the bitmap for "A" as output by gimp. Zeros and ones are references to a color palette. The image has been rotated 90 degrees clockwise before exporting. Code obviously truncated to exclude the rest of the font.
+
+	static char header_data[] = {
+		...
+		0,1,1,1,1,1,1,0,
+		0,0,0,0,1,0,0,1,
+		0,0,0,0,1,0,0,1,
+		0,0,0,0,1,0,0,1,
+		0,1,1,1,1,1,1,0,
+		...
+	};
+	
+Our program stores the same data like so:
+
+	const char bitmap[] PROGMEM = {
+		...
+		0b01111110,
+		0b00001001,
+		0b00001001,
+		0b00001001,
+		0b01111110,
+		...
+	};
+
+From what I've gathered the literal binary notation starting with 0b used above is not actually standard C. Avr-gcc however supports it, and using it in this case is very convenient.
