@@ -1,0 +1,177 @@
+ !"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_`abcdefghijklmnopqrstuvwxyz{|}~
+
+		00
+skDown		01	move cursor
+skLeft		02	move cursor
+skRight		03	move cursor
+skUp		04	move cursor
+		05
+		06
+		07
+		08
+skEnter		09	send
+skAdd		0A	SYMBOL?
+skSub		0B	w		
+skMul		0C	r		
+skDiv		0D	m		
+skPower		0E	h		
+skClear		0F	BACKSPACE
+		10
+skChs		11	
+sk3		12			
+sk6		13	v
+sk9		14	q
+skRParen	15	l
+skTan		16	g
+skVars		17	
+		18
+skDecPnt	19	
+sk2		1A	z
+sk5		1B	u
+sk8		1C	p
+skLParen	1D	k
+skCos		1E	f
+skPrgm		1F	c
+skStat		20	
+sk0		21	BIANCO
+sk1		22	y
+sk4		23	t
+sk7		24	o
+skComma		25	j
+skSin		26	e
+skMatrix	27	b
+skGraphvar	28	
+		29
+skStore		2A	x
+skLn		2B	s
+skLog		2C	n
+skSquare	2D	i
+skRecip		2E	d
+skMath		2F	a
+skAlpha		30	ALPHA
+skGraph		31	
+skTrace		32	
+skZoom		33	
+skWindow	34	
+skYEqu		35	
+sk2nd		36	SHIFT
+skMode		37		
+skDel		38
+
+------------------SHIFTED---------------
+
+skDown		39
+skLeft		3a
+skRight		3b
+skUp		3c
+		3d
+		3e
+		3f
+		40
+skEnter		41
+skAdd		42
+skSub		43	W
+skMul		44	R
+skDiv		45	M
+skPower		46	H
+skClear		47	
+		48	
+skChs		49	
+sk3		4a	
+sk6		4b	V
+sk9		4c	Q
+skRParen	4d	L
+skTan		4e	G
+skVars		4f	
+		50	
+skDecPnt	51	
+sk2		52	Z
+sk5		53	U
+sk8		54	P
+skLParen	55	K
+skCos		56	F
+skPrgm		57	C
+skStat		58	
+sk0		59	NULL
+sk1		5a	Y
+sk4		5b	T
+sk7		5c	O
+skComma		5d	J
+skSin		5e	E
+skMatrix	5f	B
+skGraphvar	60	
+		61	
+skStore		62	X
+skLn		63	S
+skLog		64	N
+skSquare	65	I
+skRecip		66	D
+skMath		67	A
+skAlpha		68	
+skGraph		69	
+skTrace		6a	
+skZoom		6b	
+skWindow	6c	
+skYEqu		6d	
+sk2nd		6e	
+skMode		6f	
+skDel		70	
+
+-------------ALPHA'ED--------------
+
+skDown		71	
+skLeft		72	
+skRight		73	
+skUp		74	
+		75		
+		76	
+		77		
+		78
+skEnter		79	
+skAdd		7a	
+skSub		7b	
+skMul		7c	
+skDiv		7d	
+skPower		7e	
+skClear		7f
+		80
+skChs		81
+sk3		82	3
+sk6		83	6
+sk9		84	9
+skRParen	85
+skTan		86
+skVars		87
+		88
+skDecPnt	89
+sk2		8a	2
+sk5		8b	5
+sk8		8c	8
+skLParen	8d
+skCos		8e
+skPrgm		8f
+skStat		90
+sk0		91	0
+sk1		92	1
+sk4		93	4
+sk7		94	7
+skComma		95
+skSin		96
+skMatrix	97
+skGraphvar	98
+		99
+skStore		9a
+skLn		9b
+skLog		9c
+skSquare	9d
+skRecip		9e
+skMath		9f
+skAlpha		a0
+skGraph		a1
+skTrace		a2
+skZoom		a3
+skWindow	a4
+skYEqu		a5
+sk2nd		a6
+skMode		a7
+skDel		a8
