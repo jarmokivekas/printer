@@ -118,3 +118,16 @@ From what I've gathered the literal binary notation starting with 0b used above 
 While it could be more automated, the process described above is simple enough that it can be easily repeated if the need for a new iteration of the font emerges or more symbols are to be added.
 
 -jarmo
+
+
+####17.2.2014
+
+I started making the text editor for the TI calculator. Currently the keyboard routines support the small and large alphabet, spacebar and numbers. The keys are not ordered in any clever way, so i'm using a table to convert key values to ASCII values. This does take a lot of space (theres a lot of empty entries) but it's still smaller than a big switch-case. Also since the keyboard is quite small the [2ND] and [ALPHA] keys will be used to write capital letters and numbers.
+
+The keyboard layout is such that the primary value of any key is the blue letter on the top right corner of the button (only the alphabet and space). Pressing [2nd] and then any key will return the capital letter of the primary value ([2ND] + space will return 0x00). Pressing [ALPHA] will return the numeric value of the number keys.
+
+The get_next_key() will return the ASCII value of the key pressed (or combination of keys). I'll be using values 0x01 to 0x19 for editor commands and other various purposes. These uses are for example moving the cursor, backspace, error codes for unrecognzed keypresses, sending the data in i2c, opening a symbol menu (to write non-alphanumerics), etc.
+
+I have yet to decide what actions i want to implement in the editor. The best might be to only include concatenating alphanumerics first and add more when i get the rest of the program working and see what's needed.
+
+-Juha
