@@ -1,4 +1,7 @@
- !"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_`abcdefghijklmnopqrstuvwxyz{|}~
+!"#$%&'(
+)*+,-./:
+;<=>?@[\
+]^_`{|}~
 
 		00
 skDown		01	move cursor

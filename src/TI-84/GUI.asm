@@ -9,15 +9,13 @@ Start:
 
 	LD HL, $0000
 	LD (CurRow), HL
-	LD A, $80
 Loop:
-	PUSH AF
+	CALL get_char
+	CP $1f
+	JR Z, Loop
 	B_CALL(_putC)
-	;B_CALL(_getKey)
-	POP AF
-	INC A
-	cp $f2
-	JR NZ, Loop
-	B_CALL(_getKey)
+	JR Loop
 
 	RET
+
+#include "./keyboard.asm"
