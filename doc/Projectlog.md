@@ -131,3 +131,6 @@ The get_next_key() will return the ASCII value of the key pressed (or combinatio
 I have yet to decide what actions i want to implement in the editor. The best might be to only include concatenating alphanumerics first and add more when i get the rest of the program working and see what's needed.
 
 -Juha
+
+
+####18.2.2014 -- Computer audio output suitablity for I2C communication
