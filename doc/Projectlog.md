@@ -134,3 +134,14 @@ I have yet to decide what actions i want to implement in the editor. The best mi
 
 
 ####18.2.2014 -- Computer audio output suitablity for I2C communication
+
+The program src/data_to_I2C_audio.c converts data in a given file into stereo audio where each channel represents the waveform of one of the I2C bus signals, SDA and SCL. Audio hardware has not been designed to be used for  general-purpose I/O, which creates some compatibility issues with the microcontroller on the receiving end of the I2C bus.
+
+The I2C hardware of the ATmega microcontroller calls for voltage levels of 5V for logic 1 and 0V for logic 0. Also, the general specification of the I2C bus dictates that output pins on the bus should be of open-collector/open-drain -type. By default, computer audio ouputs fill neither of those criterion.
+
+![SDA output with and without additional circuit](I2C_data_graph.svg)
+
+![SCL output with and without additional circuit](I2C_data_graph.svg)
+
+
+The graphs above visualize oscilloscope readings for both audio outputs (orange lines) in addition to the SDA and SCL ouputs after a small circuit was added. Analysis was done while constantly sending the byte 0x55 on the data bus (bit pattern ...0101010...).
