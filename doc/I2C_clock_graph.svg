@@ -197,7 +197,7 @@
            id="tspan4408-1-2"
            y="441.76358"
            x="194.38683"
-           sodipodi:role="line">Audio output voltage</tspan></text>
+           sodipodi:role="line">Audio SCL output voltage</tspan></text>
       <text
          sodipodi:linespacing="125%"
          id="text4412-2-8"
@@ -208,7 +208,7 @@
            id="tspan4416-1-9"
            y="459.66855"
            x="193.80675"
-           sodipodi:role="line">Circuit output voltage</tspan></text>
+           sodipodi:role="line">Circuit SCL output voltage</tspan></text>
     </g>
   </g>
 </svg>
