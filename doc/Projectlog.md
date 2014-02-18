@@ -30,9 +30,9 @@ For a reference on the printing method, look at [txtBOMBER](http://www.behance.n
 
 I created a draft for a font based off Monaco. Turns out uppercase letters fit quite nicely within the the 5x8 pixel constraint, even without modifications. Lowercase letters are more problematic. I tried squeezing the all the lowercase letters into the 5x8 format, but the result wasn't too great on some of them.
 
-[Link to the font](./sampleFont0.png)
+[~~Link to the font~~](./sampleFont0.png)
 
--jarmo
+-Jarmo
 
 
 ####13.02.2014 -- Bitmap parsing
@@ -41,7 +41,7 @@ Assuming the device will be built around an arduino (likely, since there is one 
 
 In the current design there will be 8 I/O pins used for controlling printing, each controlling one of the 8 print heads. The way symbol bitmaps are stored in the program enables us to simply read a full byte of data form the bitmap and write the value directly to `PORTD`, an 8-bit register where each bit controls the state of one I/O pin.
 
--jarmo
+-Jarmo
 
 ####14.02.2014
 
@@ -53,7 +53,7 @@ The interface is described in section 22 "2-wire Serial Interface" of the [datas
 
 I'm currently in the process of browsing relevant header files while rereading about the interface in the datasheet, in order to get a better understanding of all the registers involved in using the interface.
 
--jarmo
+-Jarmo
 
 
 ####15.02.2014 -- Generating font
@@ -117,7 +117,9 @@ From what I've gathered the literal binary notation starting with 0b used above 
 
 While it could be more automated, the process described above is simple enough that it can be easily repeated if the need for a new iteration of the font emerges or more symbols are to be added.
 
--jarmo
+**EDIT 18.2.2014**: tools/parseGimpBitmap.bash can now process the Gimp output into a suitable form. The script pipes the file produced by Gimp through a couple of sed commands, and prints data using the 0bxxxxxxxx syntax shown above.
+
+-Jarmo
 
 
 ####17.2.2014
