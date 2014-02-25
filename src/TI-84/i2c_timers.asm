@@ -12,20 +12,9 @@ init_transmission:
 	LD (bytes_left), D
 	LD A, 0
 	LD (bits_left), A
-	LD A, 1
-	LD (phase), A
-	EI
 	RET
 
 terminate_transmission:
-
-INTERRUPT:
-	DI
-	PUSH AF
-	PUSH HL
-	PUSH BC
-	LD A, (bits_left)
-	JR NZ, phases
 next_byte:
 	LD HL, (next_byte_address)
 	LD A, (HL)
@@ -58,3 +47,17 @@ next_bit:
 
 	DEC D
 	JP NZ, next_byte
+
+wait_transmit:
+	PUSH BC
+	PUSH AF
+	LD BC, $1000
+wait_loop:
+	DEC BC
+	LD A, B
+	XOR C
+	JR NZ, wait_loop
+
+	POP AF
+	POP BC
+	RET

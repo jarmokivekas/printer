@@ -13,8 +13,18 @@ Start:
 	PUSH HL
 Loop:
 	CALL get_char
+	CP $1e
+	RET Z
 	CP $1f
 	JR Z, Loop
+	CP $1d
+	JR NZ, putcees
+
+	LD D, $80		;set the arguments and call the send routine
+	LD HL, text_data
+	CALL send_data
+	JR Loop
+putcees:
 	B_CALL(_putC)
 
 	POP HL
@@ -51,3 +61,5 @@ text_data:
 
 
 #include "./keyboard.asm"
+
+#include "./i2c_transfer.asm"
