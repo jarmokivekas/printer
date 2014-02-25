@@ -133,3 +133,11 @@ The get_next_key() will return the ASCII value of the key pressed (or combinatio
 I have yet to decide what actions i want to implement in the editor. The best might be to only include concatenating alphanumerics first and add more when i get the rest of the program working and see what's needed.
 
 -Juha
+
+####25.2.2014
+
+BRLBURLubuorbluLRUBLURBUrublRUBlurlburBUBRULRBpiiiiiiiiiiiiiiiiiiiiiiiiip. The transfer works (maybe). I've got it all together for a version 0.9. I'll have to do some analysis on the signals to make sure they are properly synced and split into channels as they should. At the moment it sounds like the sound would be in mono, which is not good. But at least i've got the GUI-keyboard-transfer combination in a state that it works and can be improved.
+
+I cannot get a stereo recording and it's hard to debug by ear, so i'll leave this for when i have an oscilloscope to work with, hopefully on thursday. The problem might be that the connector is not the right kind afterall (im using an audio plug, not the real IO connector). As when it comes to sound, i might be able to make some bleeps in mono for my other projects.
+
+-Juha
