@@ -2,6 +2,9 @@
 #include <avr/interrupt.h>
 #include <avr/io.h>
 
+#include "twi_slave.h"
+#include "main.h"
+
 void twi_slave_init(unsigned char slave_addr_gcall_flag){
 	// enable interrupts
 	sei();
@@ -14,8 +17,8 @@ void twi_slave_init(unsigned char slave_addr_gcall_flag){
 	TWI_MONITOR();
 }
 
-volatile unsigned char receive_buffer[TWI_RX_BUF_LEN];
-volatile unsigned int receive_pointer = 0x00; 
+volatile char receive_buffer[TWI_RX_BUF_LEN];
+volatile char *receive_pointer = receive_buffer;
 
 // Interrupts are issued after all bus events, service them.
 // Write and read data through TWDR (TWI Data Redgister).
@@ -33,8 +36,8 @@ ISR(TWI_vect){
 			break;
 		case TW_SR_DATA_ACK:
 		case TW_SR_GCALL_DATA_ACK:
-			if (receive_pointer < TWI_RX_BUF_LEN){
-				receive_buffer[receive_pointer] = TWDR;
+			if ((int)(receive_pointer - receive_buffer) < TWI_RX_BUF_LEN){
+				*receive_pointer = TWDR;
 				receive_pointer++;
 				PORTC |= LED_RX_OK;
 				TWI_MONITOR();

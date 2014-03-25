@@ -1,4 +1,6 @@
 #include <avr/pgmspace.h>
+#include "main.h"
+
 
 #ifndef FONT_H
 #define FONT_H
@@ -15,8 +17,8 @@
 char fontBitmapReadColumn(char symbol, char column);
 
 // for sanitizing input before use
-bool fontBitmapExists(char c);
+int fontBitmapExists(char c);
 
 extern const char bitmaps[] PROGMEM;
 
-#endif FONT_H
+#endif

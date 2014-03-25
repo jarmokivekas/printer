@@ -5,10 +5,10 @@ char fontBitmapReadColumn(char symbol, char column){
 	return pgm_read_byte(&(bitmaps[BM_IDX(symbol) + column]));
 }
 
-bool fontBitmapExists(char c){
+int fontBitmapExists(char c){
 	if (c >= 0x20 && c <= 0x7f)
-		{return true;}
-	return false;
+		{return 1;}
+	return 0;
 }
 
 const char bitmaps[] PROGMEM = {
