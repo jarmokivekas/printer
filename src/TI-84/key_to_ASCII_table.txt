@@ -3,63 +3,64 @@
 ;<=>?@[\
 ]^_`{|}~
 
+Key		value	action		return value
 		00
-skDown		01	move cursor
-skLeft		02	move cursor
-skRight		03	move cursor
-skUp		04	move cursor
+skDown		01	move cursor	$11
+skLeft		02	move cursor	$12
+skRight		03	move cursor	$13
+skUp		04	move cursor	$14
 		05
 		06
 		07
 		08
-skEnter		09	send
-skAdd		0A	SYMBOL?
-skSub		0B	w		
-skMul		0C	r		
-skDiv		0D	m		
-skPower		0E	h		
-skClear		0F	BACKSPACE
+skEnter		09	send		$1d
+skAdd		0A	SYMBOL?		CALL TO ROUTINE
+skSub		0B	w		'w'
+skMul		0C	r		'r'
+skDiv		0D	m		'm'
+skPower		0E	h		'h'
+skClear		0F	BACKSPACE	$08
 		10
 skChs		11	
 sk3		12			
-sk6		13	v
-sk9		14	q
-skRParen	15	l
-skTan		16	g
+sk6		13	v		'v'
+sk9		14	q		'q'
+skRParen	15	l		'l'
+skTan		16	g		'g'
 skVars		17	
 		18
 skDecPnt	19	
-sk2		1A	z
-sk5		1B	u
-sk8		1C	p
-skLParen	1D	k
-skCos		1E	f
-skPrgm		1F	c
+sk2		1A	z		'z'
+sk5		1B	u		'u'
+sk8		1C	p		'p'
+skLParen	1D	k		'k'
+skCos		1E	f		'f'
+skPrgm		1F	c		'c'
 skStat		20	
-sk0		21	BIANCO
-sk1		22	y
-sk4		23	t
-sk7		24	o
-skComma		25	j
-skSin		26	e
-skMatrix	27	b
+sk0		21	BIANCO		$20
+sk1		22	y		'y'
+sk4		23	t		't'
+sk7		24	o		'o'
+skComma		25	j		'j'
+skSin		26	e		'e'
+skMatrix	27	b		'b'
 skGraphvar	28	
 		29
-skStore		2A	x
-skLn		2B	s
-skLog		2C	n
-skSquare	2D	i
-skRecip		2E	d
-skMath		2F	a
-skAlpha		30	ALPHA
+skStore		2A	x		'x'
+skLn		2B	s		's'
+skLog		2C	n		'n'
+skSquare	2D	i		'i'
+skRecip		2E	d		'd'
+skMath		2F	a		'a'
+skAlpha		30	ALPHA		CALL TO ROUTINE
 skGraph		31	
 skTrace		32	
 skZoom		33	
 skWindow	34	
 skYEqu		35	
-sk2nd		36	SHIFT
+sk2nd		36	SHIFT		CALL TO ROUTINE
 skMode		37		
-skDel		38
+skDel		38  	QUIT		QUITS PROGRAM
 
 ------------------SHIFTED---------------
 
@@ -73,18 +74,18 @@ skUp		3c
 		40
 skEnter		41
 skAdd		42
-skSub		43	W
-skMul		44	R
-skDiv		45	M
-skPower		46	H
+skSub		43	W		'W'
+skMul		44	R		'R'
+skDiv		45	M		'M'
+skPower		46	H		'H'
 skClear		47	
 		48	
 skChs		49	
 sk3		4a	
-sk6		4b	V
-sk9		4c	Q
-skRParen	4d	L
-skTan		4e	G
+sk6		4b	V		'V'
+sk9		4c	Q		'Q'
+skRParen	4d	L		'L'
+skTan		4e	G		'G'
 skVars		4f	
 		50	
 skDecPnt	51	

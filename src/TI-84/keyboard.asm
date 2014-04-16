@@ -55,7 +55,7 @@ ASCII_lookup:
 .db	$1f
 .db	$1f
 .db	$1f
-.db	$1f	;call send routine?
+.db	$1d	;call send routine?
 .db	$1f	;symbol (it'll call a function, not return a value)
 .db	'w'
 .db	'r'
@@ -104,7 +104,7 @@ ASCII_lookup:
 .db	$1f
 .db	$1f	;calls the shift routine
 .db	$1f
-.db	$1f
+.db	$1e
 
 ;shifted values (added 0x38)
 .db	$1f
